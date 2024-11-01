@@ -1,5 +1,5 @@
 function Feed() {
-  return <div>You are in the Feed page</div>;
+  return <div>Label: Feed</div>;
 }
 
 export default Feed;

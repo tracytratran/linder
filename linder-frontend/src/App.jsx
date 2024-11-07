@@ -1,16 +1,20 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SignUp from "./pages/SignUp";
-import Feed from "./pages/Feed";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Header from "./components/Header";
+import Feed from "./pages/Feed";
+import SignUp from "./pages/SignUp";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      <Header />
       <Routes>
         <Route path="/sign-up" element={<SignUp />}></Route>
         <Route index element={<Feed />}></Route>
       </Routes>
-    </BrowserRouter>
+      <Footer />
+    </>
   );
 }
 

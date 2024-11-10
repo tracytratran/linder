@@ -14,12 +14,6 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* justify-content: flex-start; */
-  /* align-items: center; */
-  /* height: 100vh; */
-  /* padding: 20px; */
-  /* box-sizing: border-box; */
-  /* overflow-y: auto; */
 }
 
 .logo {

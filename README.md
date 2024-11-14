@@ -1,7 +1,13 @@
-### Linder Project
+# Linder Project
 
 Our idea is to build a platform where founders can find and match with co-founders or partners for their startups. At the same time, people who are interested in joining a startup but don't have their own ideas yet can discover and match with projects that interest them. The concept is similar to Tinder, but for professional networking, which is why we are calling this project Linder (a combination of LinkedIn and Tinder).
 
-# Start Tailwind watcher (before starting project)
+## Run project from local machine
 
-npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+### Start Tailwind watcher
+
+    $ npx tailwindcss -i ./src/input.css -o ./src/output.css --watch
+
+### Start the development server
+
+    $ npm run dev

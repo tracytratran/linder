@@ -1,0 +1,163 @@
+/* Root styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  /* font-family: Arial, sans-serif; */
+  height: 100%;
+  background-color: #f5f6fa;
+  color: #333;
+}
+
+/* Container for onboarding screens */
+.onboarding-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 10px 0px 0px 10px;
+  font-size: smaller;
+}
+
+/* Header */
+.input-field__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  /* text-align: center; */
+}
+
+/* Form and input styling */
+.input-field__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.input-field {
+  padding: 20px;
+}
+
+.input-field__form__label,
+.input-field__label {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+.radio-label,
+textarea {
+  font-family: Lexend, serif;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #555;
+  background-color: #ffffff;
+  border: 1px solid #dcdde1;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+.radio-container label:focus,
+textarea:focus {
+  border-color: #00aaff;
+}
+
+/* Radio button container */
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Text at bottom */
+.input-field__span {
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+  width: 90%;
+  line-height: 1.5;
+  /* padding: 20px; */
+}
+
+.input-field__form__span {
+  text-align: left;
+  margin-top: 0px;
+  width: 100%;
+}
+
+/* Button styling */
+.continue-button {
+  width: 100%;
+  bottom: 40px;
+  padding: 14px;
+  background-color: #007aff;
+  color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  position: fixed;
+}
+
+.continue-button:hover {
+  background-color: #00aaff;
+}
+
+.exp-btn {
+  width: 30%;
+  margin-right: auto;
+
+  padding: 8px;
+  background-color: #007aff;
+  color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border: none;
+  text-transform: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.exp-btn:hover {
+  background-color: #00aaff;
+}
+
+.allSet {
+    text-align: center;
+    font-weight: bold;
+    font-size: 35px;
+    margin-top: 50%;
+    margin-bottom: 0;
+}
+
+.allSet-h2 {
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+    /* margin-top: 0;   */
+}

@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import "./App.css";
 import Logo from "./components/Logo";
 import Feed from "./pages/Feed";
 import SignUp from "./pages/SignUp";
@@ -9,8 +8,8 @@ function App() {
     <>
       <Logo />
       <Routes>
-        <Route path="/sign-up" element={<SignUp />}></Route>
-        <Route index element={<Feed />}></Route>
+        <Route index element={<SignUp />}></Route>
+        <Route path="/feed" element={<Feed />}></Route>
       </Routes>
     </>
   );

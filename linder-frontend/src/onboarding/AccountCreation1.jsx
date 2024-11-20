@@ -1,10 +1,10 @@
 function AccountCreation1() {
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">Join Linder</h1>
-      <form className="input-field__form">
-        <label className="input-field__form__label">Email<input type="email" placeholder="johndoe@example.com" /></label>
-        <label className="input-field__form__label">Password<input type="password" placeholder="Must have at least 6 characters" /></label>
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">Join Linder</h1>
+      <form className="w-full flex flex-col items-center gap-4">
+        <label className="w-full">Email<input type="email" placeholder="johndoe@example.com" /></label>
+        <label className="w-full">Password<input type="password" placeholder="Must have at least 6 characters" /></label>
       </form>
       {/* <button type="submit">Continue</button> */}
     </div>

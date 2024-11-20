@@ -1,36 +1,38 @@
 function Experience() {
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">What is your experience?</h1>
-      <form className="input-field__form">
-        <label className="input-field__form__label">
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">
+        What is your experience?
+      </h1>
+      <form className="w-full flex flex-col items-center gap-4">
+        <label className="w-full">
           Title*
           <input type="text" placeholder="Freelancer" />
         </label>
-        <label className="input-field__form__label">
+        <label className="w-full">
           Employment type
           <input type="text" placeholder="Full-time" />
         </label>
-        <label className="input-field__form__label">
+        <label className="w-full">
           Company or Organisation*
           <input type="text" placeholder="Roccai" />
         </label>
-        <span className="input-field__form__span">
+        <span className="text-left mt-0 w-full">
           <input type="checkbox" /> I am currently working in this role
         </span>
-        <label className="input-field__form__label">
+        <label className="w-full">
           Start date*
           <input type="text" placeholder="dd/mm/yyyy" />
         </label>
-        <label className="input-field__form__label">
+        <label className="w-full">
           End date*
           <input type="text" placeholder="dd/mm/yyyy" />
         </label>
-        <label className="input-field__form__label">
+        <label className="w-full">
           Location
           <input type="text" placeholder="Aarhus" />
         </label>
-        <button className="exp-btn">+ Add Skill</button>
+        <button className="w-[30%] mr-auto px-2 py-2.5 bg-blue-600 text-white shadow-md border-0 text-base font-semibold rounded-lg hover:bg-blue-400 transition-all duration-300">+ Add Skill</button>
       </form>
       {/* <button type="submit">Agree & Join</button> */}
     </div>

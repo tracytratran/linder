@@ -26,14 +26,14 @@ function Requirements() {
   };
 
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">Who do you search for?</h1>
-      <div className="input-field__container">
-        <label className="input-field__form__label">
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">Who do you search for?</h1>
+      <div className="flex flex-wrap items-center gap-2.5 w-full min-h-[40px] relative">
+        <label className="w-full">
           Position
           <input type="text" placeholder="React Developer" />
         </label>
-        <label className="input-field__label">
+        <label className="w-full">
           Requirements
           <input
             type="text"
@@ -41,12 +41,12 @@ function Requirements() {
             onChange={handleInputChange}
             onKeyDown={handleKeyDown}
             placeholder="What skills do they need?"
-            className="input-field__container__input"
+            className="border-none outline-none text-sm flex-grow min-w-[80px] p-1"
           />
         </label>
         <div>
           {selectedRequirements.map((requirement, index) => (
-            <div key={index} className="chip-list">
+            <div key={index} className="mb-2 px-2 py-1 rounded-md flex gap-1 text-sm">
               <span
                 style={{ fontSize: "20px" }}
                 className="material-symbols-outlined"
@@ -55,7 +55,7 @@ function Requirements() {
               </span>
               {requirement}
               <button
-                className="chip__delete-button"
+                className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"
                 onClick={() => handleDeleteRequirements(index)}
               >
                 ×

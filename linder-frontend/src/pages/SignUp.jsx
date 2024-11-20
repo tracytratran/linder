@@ -1,6 +1,5 @@
 import { useState } from "react";
 import DotsMobileStepper from "../components/DotsMobileStepper";
-import Logo from "../components/Logo";
 import AccountCreation1 from "../onboarding/AccountCreation1";
 import AccountCreation2 from "../onboarding/AccountCreation2";
 import AccountCreation3 from "../onboarding/AccountCreation3";

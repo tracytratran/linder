@@ -32,6 +32,7 @@ function Skills() {
         <label className="w-full">
           Skills
           <input
+            required
             type="text"
             value={inputValue}
             onChange={handleInputChange}
@@ -41,7 +42,7 @@ function Skills() {
           />
         </label>
         {selectedSkills.map((skill, index) => (
-          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize">
+          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize py-1.5 px-3 border border-slate-400 rounded-xl">
             {skill}
             <button
               className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"

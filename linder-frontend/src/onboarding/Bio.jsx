@@ -6,7 +6,9 @@ function Bio() {
         Short Bio
         <textarea
           placeholder="I am a..."
-          style={{ width: "100%", height: "200px", resize: "none" }}
+          maxLength={400}
+          required
+          style={{ width: "100%", height: "320px", resize: "none" }}
         ></textarea>
       </label>
       {/* <button type="submit">Next</button> */}

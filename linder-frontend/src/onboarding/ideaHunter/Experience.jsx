@@ -7,7 +7,7 @@ function Experience() {
       <form className="w-full flex flex-col items-center gap-4">
         <label className="w-full">
           Title*
-          <input type="text" placeholder="Freelancer" />
+          <input type="text" placeholder="e.g. Freelancer" required />
         </label>
         <label className="w-full">
           Employment type
@@ -15,18 +15,18 @@ function Experience() {
         </label>
         <label className="w-full">
           Company or Organisation*
-          <input type="text" placeholder="Roccai" />
+          <input type="text" placeholder="Roccai" required />
         </label>
         <span className="text-left mt-0 w-full">
           <input type="checkbox" /> I am currently working in this role
         </span>
         <label className="w-full">
           Start date*
-          <input type="text" placeholder="dd/mm/yyyy" />
+          <input type="date" placeholder="dd/mm/yyyy" required className="no-icon" />
         </label>
         <label className="w-full">
           End date*
-          <input type="text" placeholder="dd/mm/yyyy" />
+          <input type="date" placeholder="dd/mm/yyyy" required  className="no-icon"/>
         </label>
         <label className="w-full">
           Location

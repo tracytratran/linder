@@ -34,6 +34,7 @@ function Interests() {
         <label className="w-full">
           Area of interest
           <input
+            required
             type="text"
             value={inputValue}
             onChange={handleInputChange}
@@ -43,7 +44,7 @@ function Interests() {
           />
         </label>
         {selectedInterests.map((interest, index) => (
-          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize">
+          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize text-sky-700 italic text-wrap">
             #{interest}
             <button
               className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"

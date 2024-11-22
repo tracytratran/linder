@@ -55,13 +55,13 @@ function SignUp() {
   };
 
   return (
-    <div className="onboarding-screen">
+    <div className="flex flex-col justify-between">
       {getCurrentPage()}
 
       {/* Display 'Next' button for first three steps */}
       {step < 4 && (
-        <div className="stepper-container">
-          <button className="continue-button" onClick={nextStep}>
+        <div className="flex flex-col items-center fixed bottom-24 w-full">
+          <button className="w-full max-w-[400px] py-2.5 text-base text-white bg-[#3f51b5] border-none rounded-md cursor-pointer transition-colors duration-300 hover:bg-[#303f9f]" onClick={nextStep}>
             Next
           </button>
         </div>

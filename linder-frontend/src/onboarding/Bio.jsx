@@ -1,8 +1,8 @@
 function Bio() {
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">Tell others about yourself</h1>
-      <label className="input-field__label">
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">Tell others about yourself</h1>
+      <label className="w-full">
         Short Bio
         <textarea
           placeholder="I am a..."

@@ -11,10 +11,10 @@ function AccountCreation3({ onSelectUserType}) {
   };
 
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">What are you looking for?</h1>
-      <div className="radio-container">
-        <label className="radio-label">
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">What are you looking for?</h1>
+      <div className="flex flex-col items-start gap-2 w-full">
+        <label className="w-full p-3 text-base text-gray-600 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-500 transition duration-300 ease-in-out">
           <input
             type="radio"
             value="Idea"
@@ -23,7 +23,7 @@ function AccountCreation3({ onSelectUserType}) {
           />
           Idea
         </label>
-        <label className="radio-label">
+        <label className="w-full p-3 text-base text-gray-600 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:ring-2 focus-within:ring-blue-500 transition duration-300 ease-in-out">
           <input
             type="radio"
             value="Collaborator"

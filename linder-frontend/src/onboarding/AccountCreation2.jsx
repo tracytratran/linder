@@ -1,18 +1,18 @@
 function AccountCreation2() {
   return (
-    <div className="input-field">
-      <h1 className="input-field__title">Join Linder</h1>
-      <form className="input-field__form">
-        <label className="input-field__form__label">
+    <div className="p-5">
+      <h1 className="text-2xl font-semibold mb-5 text-gray-800">Join Linder</h1>
+      <form className="w-full flex flex-col items-center gap-4">
+        <label className="w-full">
           First Name
           <input type="text" placeholder="John" />
         </label>
-        <label className="input-field__form__label">
+        <label className="w-full">
           Last Name
           <input type="text" placeholder="Doe" />
         </label>
       </form>
-      <span className="input-field__span">
+      <span className="text-sm text-gray-500 text-center mt-2.5 w-[90%] leading-relaxed">
         By clicking Agree & Join, you agree to Privacy Policy and Terms of
         Service.
       </span>

@@ -51,6 +51,7 @@ html {
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="date"],
 .radio-label,
 textarea {
   font-family: Lexend, serif;
@@ -73,6 +74,11 @@ input[type="password"]:focus,
 .radio-container label:focus,
 textarea:focus {
   border-color: #00aaff;
+}
+
+/* Hide date picker icon */
+input[type="date"].no-icon::-webkit-calendar-picker-indicator {
+  display: none;
 }
 
 /* Radio button container */

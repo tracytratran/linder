@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../styling/Skills.css";
+import IconFilled from "../../components/IconFilled";
 
 function Requirements() {
   const [selectedRequirements, setSelectedRequirements] = useState([]);
@@ -31,11 +32,12 @@ function Requirements() {
       <div className="flex flex-wrap items-center gap-2.5 w-full min-h-[40px] relative">
         <label className="w-full">
           Position
-          <input type="text" placeholder="React Developer" />
+          <input type="text" placeholder="React Developer" required />
         </label>
         <label className="w-full">
           Requirements
           <input
+            required
             type="text"
             value={inputValue}
             onChange={handleInputChange}
@@ -46,14 +48,15 @@ function Requirements() {
         </label>
         <div>
           {selectedRequirements.map((requirement, index) => (
-            <div key={index} className="mb-2 px-2 py-1 rounded-md flex gap-1 text-sm">
-              <span
+            <div key={index} className="mb-2 rounded-md flex gap-1">
+              {/* <span
                 style={{ fontSize: "20px" }}
                 className="material-symbols-outlined"
               >
                 diamond
-              </span>
-              {requirement}
+              </span> */}
+              <IconFilled name="diamond" className="text-xl text-sky-700" />
+              <div className="pt-0.5">{requirement}</div>
               <button
                 className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"
                 onClick={() => handleDeleteRequirements(index)}

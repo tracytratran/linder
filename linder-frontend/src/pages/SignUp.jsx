@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import DotsMobileStepper from "../components/DotsMobileStepper";
 import AccountCreation1 from "../onboarding/AccountCreation1";
 import AccountCreation2 from "../onboarding/AccountCreation2";
@@ -17,9 +18,15 @@ import "../styling/SignUp.css";
 function SignUp() {
   const [step, setStep] = useState(1);
   const [userType, setUserType] = useState(""); // Track if user is IdeaOwner or IdeaHunter
+  const navigate = useNavigate(); // Initialize navigation
 
   const nextStep = () => {
-    setStep((prev) => (prev < totalSteps ? prev + 1 : prev));
+    if (step < totalSteps) {
+      setStep((prev) => prev + 1);
+    } else if (step === totalSteps) {
+      // Redirect to Feed when the last step is completed
+      navigate("/feed");
+    }
   };
 
   // Define total steps based on user type
@@ -56,12 +63,16 @@ function SignUp() {
 
   return (
     <div className="flex flex-col justify-between">
+      {/* <Logo /> */}
       {getCurrentPage()}
 
       {/* Display 'Next' button for first three steps */}
       {step < 4 && (
-        <div className="flex flex-col items-center fixed bottom-24 w-full">
-          <button className="w-full max-w-[400px] py-2.5 text-base text-white bg-[#3f51b5] border-none rounded-md cursor-pointer transition-colors duration-300 hover:bg-[#303f9f]" onClick={nextStep}>
+        <div className="flex flex-col items-center fixed w-full bottom-[30px]">
+          <button
+            className="w-full max-w-[400px] py-2.5 text-base text-white bg-sky-700 border-none rounded-md cursor-pointer transition-colors duration-300 hover:bg-[#303f9f]"
+            onClick={nextStep}
+          >
             Next
           </button>
         </div>

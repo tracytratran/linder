@@ -26,25 +26,28 @@ function Idea() {
   };
 
   return (
-    <div className="p-5">
+    <div style={{ height: "calc(100vh - 142px)" }} className="p-5 overflow-scroll">
       <h1 className="text-2xl font-semibold mb-5 text-gray-800">
         What is your idea?
       </h1>
       <div className="flex flex-wrap items-center gap-2.5 w-full min-h-[40px] relative">
         <label className="w-full">
           Brief Idea
-          <input type="text" placeholder="Describe your idea briefly" />
+          <textarea required type="text" placeholder="Describe your idea briefly in 3 lines" maxLength={160} style={{height: '150px'}}  />
         </label>
         <label className="w-full">
           Expanded Idea
           <textarea
+            required
+            maxLength={400}
             placeholder="Tell others more about your idea (e.g how it was created, what it is about, etc.)"
-            style={{ width: "100%", height: "200px", resize: "none" }}
+            style={{ width: "100%", height: "320px", resize: "none" }}
           ></textarea>
         </label>
         <label className="w-full">
           Tags
           <input
+            required
             type="text"
             value={inputValue}
             onChange={handleInputChange}
@@ -54,7 +57,7 @@ function Idea() {
           />
         </label>
         {selectedTags.map((tag, index) => (
-          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize">
+          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize text-sky-700 italic text-wrap">
             #{tag}
             <button
               className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"

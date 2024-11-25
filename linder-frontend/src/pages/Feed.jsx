@@ -5,28 +5,28 @@ import { profiles } from "../profiles";
 
 function Feed() {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
-  const [swipeDirection, setSwipeDirection] = useState(null);
+  // const [swipeDirection, setSwipeDirection] = useState(null);
 
-  const handleSwipe = (direction) => {
-    setSwipeDirection(direction);
-    setTimeout(() => {
-      setCurrentProfileIndex((previousIndex) => previousIndex + 1);
-      setSwipeDirection(null);
-    }, 600);
-  };
+  // const handleSwipe = (direction) => {
+  //   setSwipeDirection(direction);
+  //   setTimeout(() => {
+  //     setCurrentProfileIndex((previousIndex) => previousIndex + 1);
+  //     setSwipeDirection(null);
+  //   }, 600);
+  // };
 
   const currentProfile = profiles[currentProfileIndex];
+
+  const handleDislike = () => {
+    setCurrentProfileIndex((previousIndex) => previousIndex + 1);
+  };
 
   return (
     <>
       <div className="flex justify-center items-center">
         <div className="mx-0 w-full sm:w-1/2 md:w-1/3">
           {currentProfile ? (
-            <Card
-              profile={currentProfile}
-              onSwipe={handleSwipe}
-              swipeDirection={swipeDirection}
-            />
+            <Card profile={currentProfile} handleDislike={handleDislike} />
           ) : (
             <p>No more profiles</p>
           )}

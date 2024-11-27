@@ -570,10 +570,6 @@ video {
   bottom: 0px;
 }
 
-.bottom-24 {
-  bottom: 6rem;
-}
-
 .bottom-\[30px\] {
   bottom: 30px;
 }
@@ -816,11 +812,6 @@ video {
 .bg-\[\#24a6da\] {
   --tw-bg-opacity: 1;
   background-color: rgb(36 166 218 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#3f51b5\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(63 81 181 / var(--tw-bg-opacity));
 }
 
 .bg-blue-600 {

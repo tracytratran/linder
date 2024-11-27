@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../../styling/Skills.css";
+import IconFilled from "../../components/IconFilled";
 
 function Skills() {
   const [selectedSkills, setSelectedSkills] = useState([]);
@@ -41,17 +42,20 @@ function Skills() {
             className="border-none outline-none text-sm flex-grow min-w-[80px] p-1"
           />
         </label>
-        {selectedSkills.map((skill, index) => (
-          <div key={index} className="bg-gray-200 px-2 py-1 pl-4 rounded-md flex items-center gap-1 text-sm capitalize py-1.5 px-3 border border-slate-400 rounded-xl">
-            {skill}
-            <button
-              className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"
-              onClick={() => handleDeleteSkill(index)}
-            >
-              ×
-            </button>
-          </div>
-        ))}
+        <div>
+          {selectedSkills.map((skill, index) => (
+            <div key={index} className="mb-2 rounded-md flex gap-1">
+              <IconFilled name="diamond" className="text-xl text-sky-700" />
+              <div className="pt-0.5">{skill}</div>
+              <button
+                className="bg-none border-none cursor-pointer text-gray-500 font-bold hover:text-gray-700"
+                onClick={() => handleDeleteSkill(index)}
+              >
+                ×
+              </button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

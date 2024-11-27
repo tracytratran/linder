@@ -8,7 +8,7 @@ function DotsMobileStepper({ steps, activeStep, onNext }) {
         {Array.from({ length: steps }).map((_, index) => (
           <span
             key={index}
-            className={`w-2 h-2 bg-gray-300 rounded-full p-[1px] transition-colors duration-300 ${index === activeStep ? "w-2 h-2 bg-[#24a6da] rounded-full p-[1px] transition-colors duration-300" : ""}`}
+            className={`w-2 h-2 bg-gray-300 rounded-full p-[1px] transition-colors duration-300 ${index === activeStep ? "bg-sky-700" : ""}`}
           ></span>
         ))}
       </div>

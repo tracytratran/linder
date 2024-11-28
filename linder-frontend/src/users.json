@@ -1,28 +1,27 @@
 [
-    {
-      "id": 1,
-      "name": "Anne Anderson",
-      "profilePicture": "/src/assets/avatar/AnneAnderson.JPG"
-    },
-    {
-      "id": 2,
-      "name": "Mads Mikkelsen",
-      "profilePicture": "/src/assets/avatar/JohannePedersen.JPG"
-    },
-    {
-      "id": 3,
-      "name": "Kasper Hansen",
-      "profilePicture": "/src/assets/avatar/MadsMikkelsen.JPG"
-    },
-    {
-      "id": 4,
-      "name": "Jonas Karlsson",
-      "profilePicture": "/src/assets/avatar/JohannePedersen.JPG"
-    },
-    {
-      "id": 5,
-      "name": "Sine Sørensen",
-      "profilePicture": "/src/assets/avatar/AnneAnderson.JPG"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Anne Anderson",
+    "profilePicture": "/src/assets/avatar/AnneAnderson.JPG"
+  },
+  {
+    "id": 2,
+    "name": "Johanne Pedersen",
+    "profilePicture": "/src/assets/avatar/JohannePedersen.JPG"
+  },
+  {
+    "id": 3,
+    "name": "Mads Mikkelsen",
+    "profilePicture": "/src/assets/avatar/MadsMikkelsen.JPG"
+  },
+  {
+    "id": 4,
+    "name": "Jonas Karlsson",
+    "profilePicture": "/src/assets/avatar/JonasKarlsson.JPG"
+  },
+  {
+    "id": 5,
+    "name": "Sine Sørensen",
+    "profilePicture": "/src/assets/avatar/SineSørensen.JPG"
+  }
+]

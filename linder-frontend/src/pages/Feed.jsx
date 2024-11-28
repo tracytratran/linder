@@ -5,34 +5,34 @@ import { profiles } from "../profiles";
 
 function Feed() {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
-  // const [swipeDirection, setSwipeDirection] = useState(null);
 
-  // const handleSwipe = (direction) => {
-  //   setSwipeDirection(direction);
-  //   setTimeout(() => {
-  //     setCurrentProfileIndex((previousIndex) => previousIndex + 1);
-  //     setSwipeDirection(null);
-  //   }, 600);
-  // };
+  const [swipeDirection, setSwipeDirection] = useState(null);
 
   const currentProfile = profiles[currentProfileIndex];
 
+  // const handleDislike = () => {
+  //   setCurrentProfileIndex((previousIndex) => previousIndex + 1);
+  // };
+
   const handleDislike = () => {
-    setCurrentProfileIndex((previousIndex) => previousIndex + 1);
+    setSwipeDirection("left");
+    setTimeout(() => {
+      setCurrentProfileIndex((previousIndex) => previousIndex + 1);
+      setSwipeDirection(null);
+    }, 200);
   };
 
   return (
     <>
       <div className="flex justify-center items-center">
         <div className="mx-0 w-full sm:w-1/2 md:w-1/3">
-          {currentProfile ? (
-            <Card profile={currentProfile} handleDislike={handleDislike} />
-          ) : (
-            <p>No more profiles</p>
+          {currentProfile && (
+            <Card
+              profile={currentProfile}
+              handleDislike={handleDislike}
+              direction={swipeDirection}
+            />
           )}
-          {/* {profiles.map((profile) => (
-            <Card key={profile.id} profile={profile} />
-          ))} */}
         </div>
       </div>
       <NavigationBar />

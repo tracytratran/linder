@@ -1,8 +1,10 @@
 import { useState } from "react";
 import IconFilled from "./IconFilled";
 import "../styling/Card.css";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
 
-function Card({ profile, handleDislike }) {
+function Card({ profile, handleDislike, direction }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -15,7 +17,7 @@ function Card({ profile, handleDislike }) {
       onClick={handleFlip}
     >
       <div
-        className={`flip-card-inner relative w-full h-full shadow-md sm:my-4 ${
+        className={`flip-card-inner swipe-${direction} relative w-full h-full shadow-md sm:my-4 ${
           isFlipped ? "rotate-y-180" : ""
         } grow border border-sky-100 rounded-lg`}
         style={{ transition: "transform 0.6s", transformStyle: "preserve-3d" }}
@@ -112,10 +114,46 @@ function FlipCardBack({ profile, handleDislike }) {
 }
 
 function Action({ handleDislike }) {
+  const [open, setOpen] = useState(false);
+
+  const onLike = (event) => {
+    event.stopPropagation();
+    setOpen(true);
+  };
+
+  const handleClose = (event) => {
+    // event.preventDefault();
+    event.stopPropagation();
+    setOpen(false);
+  };
+
   const onDislike = (event) => {
     event.stopPropagation();
     handleDislike();
   };
+
+  const style = {
+    position: "absolute",
+    top: "25vh",
+    bottom: 0,
+    width: "100%",
+    bgcolor: "background.paper",
+    boxShadow: 24,
+    p: 3,
+    // transform: "translateY(100%)",
+    transition: "opacity 250ms ease-out",
+    fontFamily: "'Poppins', san-serif",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  };
+
+  const defaultMessage = `Hi Anne,\n\nIt's great to connect with you! I was impressed by your idea for a 24/7 booking platform for Aarhus University. It aligns closely with my interests in enhancing campus accessibility and user experience. I'd love to discuss potential collaboration opportunities with you.\n\nLooking forward to connecting!\n\nBest regards,\n\nMichael Thompson`;
+
+  const [message, setMessage] = useState(defaultMessage);
+
+  // const handleSend = (e) => {};
+
   return (
     <div className="flex-none">
       <div className="flex flex-row justify-between items-center px-16 pb-4 bottom-0">
@@ -131,7 +169,40 @@ function Action({ handleDislike }) {
         <IconFilled
           name="thumb_up"
           className="p-3 rounded-full bg-green-600 text-white text-[28px]"
+          handleClick={onLike}
         />
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-title"
+          aria-describedby="modal-description"
+          className="rounded-md"
+        >
+          <Box sx={style}>
+            <IconFilled
+              name="close"
+              className="flex justify-end"
+              handleClick={handleClose}
+            />
+            <h5>
+              Send a message and increase your chances of getting a match by up
+              to 25%
+            </h5>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              rows={16}
+              className="text-justify"
+            />
+
+            <button
+              className="w-full py-2.5 text-base text-white bg-sky-700 border-none rounded-md cursor-pointer transition-colors duration-300 hover:bg-[#303f9f] my-4"
+              onClick={() => {}}
+            >
+              Send
+            </button>
+          </Box>
+        </Modal>
       </div>
     </div>
   );

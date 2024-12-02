@@ -1,8 +1,10 @@
-import { useState } from "react";
-import IconFilled from "./IconFilled";
-import "../styling/Card.css";
-import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
+import Modal from "@mui/material/Modal";
+import Snackbar from "@mui/material/Snackbar";
+import { useState } from "react";
+import "../styling/Card.css";
+import IconFilled from "./IconFilled";
+import Alert from "@mui/material/Alert";
 
 function Card({ profile, handleDislike, direction }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -121,15 +123,14 @@ function Action({ handleDislike }) {
     setOpen(true);
   };
 
-  const handleClose = (event) => {
-    // event.preventDefault();
-    event.stopPropagation();
-    setOpen(false);
-  };
-
   const onDislike = (event) => {
     event.stopPropagation();
     handleDislike();
+  };
+
+  const handleClose = (event) => {
+    event.stopPropagation();
+    setOpen(false);
   };
 
   const style = {
@@ -151,8 +152,38 @@ function Action({ handleDislike }) {
   const defaultMessage = `Hi Anne,\n\nIt's great to connect with you! I was impressed by your idea for a 24/7 booking platform for Aarhus University. It aligns closely with my interests in enhancing campus accessibility and user experience. I'd love to discuss potential collaboration opportunities with you.\n\nLooking forward to connecting!\n\nBest regards,\n\nMichael Thompson`;
 
   const [message, setMessage] = useState(defaultMessage);
+  const [openMessage, setOpenMessage] = useState(false);
 
-  // const handleSend = (e) => {};
+  const handleSend = (event) => {
+    event.stopPropagation();
+    setOpen(false);
+    setOpenMessage(true);
+  };
+
+  const handleCloseMessage = (event, reason) => {
+    event.stopPropagation();
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenMessage(false);
+  };
+
+  const [openFavourite, setOpenFavourite] = useState(false);
+
+  const handleFavourite = (event) => {
+    event.stopPropagation();
+    setOpenFavourite(true);
+  };
+
+  const handleCloseFavourite = (event, reason) => {
+    event.stopPropagation();
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpenFavourite(false);
+  };
 
   return (
     <div className="flex-none">
@@ -165,6 +196,7 @@ function Action({ handleDislike }) {
         <IconFilled
           name="star"
           className="p-2 rounded-full bg-orange-500 text-white text-[24px]"
+          handleClick={handleFavourite}
         />
         <IconFilled
           name="thumb_up"
@@ -197,12 +229,40 @@ function Action({ handleDislike }) {
 
             <button
               className="w-full py-2.5 text-base text-white bg-sky-700 border-none rounded-md cursor-pointer transition-colors duration-300 hover:bg-[#303f9f] my-4"
-              onClick={() => {}}
+              onClick={handleSend}
             >
               Send
             </button>
           </Box>
         </Modal>
+        <Snackbar
+          open={openFavourite}
+          autoHideDuration={3000}
+          onClose={handleCloseFavourite}
+        >
+          <Alert
+            onClose={handleCloseFavourite}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            This profile has been saved.
+          </Alert>
+        </Snackbar>
+        <Snackbar
+          open={openMessage}
+          autoHideDuration={5000}
+          onClose={handleCloseMessage}
+        >
+          <Alert
+            onClose={handleCloseMessage}
+            severity="success"
+            variant="filled"
+            sx={{ width: "100%" }}
+          >
+            Your message has been sent.
+          </Alert>
+        </Snackbar>
       </div>
     </div>
   );

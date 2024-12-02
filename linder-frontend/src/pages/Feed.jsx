@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../components/Card";
 import NavigationBar from "../components/NavigationBar";
-import { profiles } from "../profiles";
+import { profiles } from "../Profiles";
 
 function Feed() {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
@@ -10,12 +10,8 @@ function Feed() {
 
   const currentProfile = profiles[currentProfileIndex];
 
-  // const handleDislike = () => {
-  //   setCurrentProfileIndex((previousIndex) => previousIndex + 1);
-  // };
-
-  const handleDislike = () => {
-    setSwipeDirection("left");
+  const handleNextProfile = () => {
+    setSwipeDirection("right");
     setTimeout(() => {
       setCurrentProfileIndex((previousIndex) => previousIndex + 1);
       setSwipeDirection(null);
@@ -29,7 +25,7 @@ function Feed() {
           {currentProfile && (
             <Card
               profile={currentProfile}
-              handleDislike={handleDislike}
+              handleNextProfile={handleNextProfile}
               direction={swipeDirection}
             />
           )}

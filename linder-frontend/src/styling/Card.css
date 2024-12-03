@@ -8,7 +8,7 @@
   transform: rotateY(180deg);
 }
 
-.swipe-left {
-  transform: translateX(-100%) rotate(-15deg);
+.swipe-right {
+  transform: translateX(100%) rotate(15deg);
   opacity: 0;
 }

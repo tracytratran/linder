@@ -1,12 +1,12 @@
+import Alert from "@mui/material/Alert";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Snackbar from "@mui/material/Snackbar";
 import { useState } from "react";
 import "../styling/Card.css";
 import IconFilled from "./IconFilled";
-import Alert from "@mui/material/Alert";
 
-function Card({ profile, handleDislike, direction }) {
+function Card({ profile, handleNextProfile, direction }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const handleFlip = () => {
     setIsFlipped(!isFlipped);
@@ -24,14 +24,17 @@ function Card({ profile, handleDislike, direction }) {
         } grow border border-sky-100 rounded-lg`}
         style={{ transition: "transform 0.6s", transformStyle: "preserve-3d" }}
       >
-        <FlipCardFront profile={profile} handleDislike={handleDislike} />
-        <FlipCardBack profile={profile} handleDislike={handleDislike} />
+        <FlipCardFront
+          profile={profile}
+          handleNextProfile={handleNextProfile}
+        />
+        <FlipCardBack profile={profile} handleNextProfile={handleNextProfile} />
       </div>
     </div>
   );
 }
 
-function FlipCardFront({ profile, handleDislike }) {
+function FlipCardFront({ profile, handleNextProfile }) {
   return (
     <div className="flip-card-front absolute h-full flex flex-col px-4 py-2">
       <IconFilled name="autorenew" className="flex justify-end" />
@@ -76,12 +79,12 @@ function FlipCardFront({ profile, handleDislike }) {
           </div>
         </div>
       </div>
-      <Action handleDislike={handleDislike} />
+      <Action handleNextProfile={handleNextProfile} />
     </div>
   );
 }
 
-function FlipCardBack({ profile, handleDislike }) {
+function FlipCardBack({ profile, handleNextProfile }) {
   return (
     <div
       className="flip-card-back absolute h-full flex flex-col p-4"
@@ -110,22 +113,17 @@ function FlipCardBack({ profile, handleDislike }) {
           ))}
         </div>
       </div>
-      <Action handleDislike={handleDislike} />
+      <Action handleNextProfile={handleNextProfile} />
     </div>
   );
 }
 
-function Action({ handleDislike }) {
+function Action({ handleNextProfile }) {
   const [open, setOpen] = useState(false);
 
   const onLike = (event) => {
     event.stopPropagation();
     setOpen(true);
-  };
-
-  const onDislike = (event) => {
-    event.stopPropagation();
-    handleDislike();
   };
 
   const handleClose = (event) => {
@@ -171,7 +169,7 @@ function Action({ handleDislike }) {
 
   const [openFavourite, setOpenFavourite] = useState(false);
 
-  const handleFavourite = (event) => {
+  const onSave = (event) => {
     event.stopPropagation();
     setOpenFavourite(true);
   };
@@ -185,23 +183,28 @@ function Action({ handleDislike }) {
     setOpenFavourite(false);
   };
 
+  const onNext = (event) => {
+    event.stopPropagation();
+    handleNextProfile();
+  };
+
   return (
     <div className="flex-none">
       <div className="flex flex-row justify-between items-center px-16 pb-4 bottom-0">
         <IconFilled
-          name="thumb_down"
-          className="p-3 rounded-full bg-red-600 text-white text-[28px]"
-          handleClick={onDislike}
-        />
-        <IconFilled
-          name="star"
-          className="p-2 rounded-full bg-orange-500 text-white text-[24px]"
-          handleClick={handleFavourite}
-        />
-        <IconFilled
           name="thumb_up"
           className="p-3 rounded-full bg-green-600 text-white text-[28px]"
           handleClick={onLike}
+        />
+        <IconFilled
+          name="star"
+          className="p-2 rounded-full bg-yellow-400 text-white text-[24px]"
+          handleClick={onSave}
+        />
+        <IconFilled
+          name="navigate_next"
+          className="p-3 rounded-full bg-primary text-white text-[28px]"
+          handleClick={onNext}
         />
         <Modal
           open={open}
